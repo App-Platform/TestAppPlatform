@@ -1,0 +1,869 @@
+<!DOCTYPE html> 
+<html>
+<head> 
+<title>App-Platform.net Test</title>
+<link rel="SHORTCUT ICON" href="favicon.ico" />
+<meta name="KEYWORDS" content="app-platform, app platform, appplatform, mobile web app development, mobile app design, apps, MN, Twin Cities, Minneapolis, St. Paul, Greater twin city metro area,  HTML 5 mobile web design, custom mobile data capture, custom mobile, unlimited business card app, cross platform compatible mobile apps, amazing referral tool" />
+<meta name="DESCRIPTION" content="Offering custom mobile applications for business professionals, including The Unlimited Business Card App and custom designed apps for all of your needs." />
+<meta content='True' name='HandheldFriendly' />
+<meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
+<meta name="viewport" content="width=device-width" />
+
+<!-- iOS -->
+<meta name="apple-mobile-web-app-title" content="App-Platform.net">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<!-- iPhone -->
+<link href="icn/apple-touch-icon-57x57.png" sizes="57x57" rel="apple-touch-icon">
+<link href="icn/apple-touch-startup-image-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+
+<!-- iPhone (Retina) -->
+<link href="icn/apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon">
+<link href="icn/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+<!-- iPhone 5 -->
+<link href="icn/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+<!-- iPad -->
+<link href="icn/apple-touch-icon-72x72.png" sizes="72x72" rel="apple-touch-icon">
+<link href="icn/apple-touch-startup-image-768x1004.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+<link href="icn/apple-touch-startup-image-748x1024.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+
+<!-- iPad (Retina) -->
+<link href="icn/apple-touch-icon-144x144.png" sizes="144x144" rel="apple-touch-icon">
+<link href="icn/apple-touch-startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+<link href="icn/apple-touch-startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+<!-- CSS -->
+<link type="text/css" rel="stylesheet" href="css/jquery.mobile.structure-1.3.0.min.css" />
+<link type="text/css" rel="stylesheet" href="css/custom-theme.css" />
+<link type="text/css" rel="stylesheet" href="css/jquery-mobile-fluid960.min.css" />
+<link type="text/css" rel="stylesheet" href="css/colorbox.css" />
+<link type="text/css" rel="stylesheet" href="css/pwi.css" />
+<link type="text/css" rel="stylesheet" href="css/app-platform.css" />
+
+<!--link type="text/css" rel="stylesheet" href="http://app-platform.net/min/b=sales/css&f=jquery.mobile.structure-1.3.0.min.css,custom-theme.css,jquery-mobile-fluid960.min.css,colorbox.css,pwi.css,app-platform.css" /-->
+
+<!-- ADD SCRIPTS -->
+
+<!-- Add jQuery / Mobile -->
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox.js"></script>
+<script type="text/javascript" src="js/jquery.pwi.js"></script>
+<script type="text/javascript" src="js/app-platform.js"></script>
+
+<!--script type="text/javascript" src="http://app-platform.net/min/b=sales/js&f=jquery-1.8.2.min.js,jquery.mobile-1.3.0.min.js,jquery.validate.min.js,jquery.colorbox.js,jquery.pwi.js,app-platform.js"></script-->
+
+<!-- Add PhoneGap 
+<script type="text/javascript" src="phonegap.js"></script>
+-->
+
+<!-- Slideshow -->
+<link rel="stylesheet" href="slideshow/flexslider.css" type="text/css">
+<script type="text/javascript" src="slideshow/jquery.flexslider-min.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    $('.flexslider').flexslider();
+  });
+</script>
+<!-- /Slideshow -->
+
+<!-- Mortgage Caculator -->
+<style>
+.results {padding:20px; background:#fff; -moz-border-radius: 15px; border-radius: 15px; float:right;}
+</style>
+
+<script type="text/javascript" src="js/accounting.min.js"></script>
+<script language="JavaScript">
+<!--
+	function checkForZero(field) {
+		if (field.value == 0 || field.value.length == 0) {
+			field.focus(); }
+		else {
+			calculatePayment(field.form)
+		}
+	}
+	
+	function cmdCalc_Click(form) {
+		if (form.price.value == 0 || form.price.value.length == 0) {
+			form.price.focus(); }
+		else if (form.ir.value == 0 || form.ir.value.length == 0) {
+			form.ir.focus(); }
+		else if (form.term.value == 0 || form.term.value.length == 0) {
+			form.term.focus(); }
+		else {
+			calculatePayment(form)
+		}
+	}
+	
+	function calculatePayment(form) {
+		//loan = form.loanType.value;
+		princ = form.price.value - form.dp.value;
+		intRate = (form.ir.value/100) / 12;
+		months = form.term.value * 12;
+		taxRate =  (form.pt.value) / 12;
+		insRate =  (form.ins.value) / 12;
+		pmiRate =  (form.pmi.value) / 12;
+		assFees = form.fees.value * 1;
+		monthlyPmt = Math.floor((princ*intRate)/(1-Math.pow(1+intRate,(-1*months)))*100)/100+taxRate+insRate+pmiRate+assFees;
+		
+		document.getElementById('returnPrinciple').innerHTML = accounting.formatMoney(princ);
+		document.getElementById('returnPayment').innerHTML = months;
+		document.getElementById('returnMonthly').innerHTML = accounting.formatMoney(monthlyPmt);
+		document.getElementById('returnTaxes').innerHTML = accounting.formatMoney(taxRate);
+		document.getElementById('returnINS').innerHTML = accounting.formatMoney(insRate);
+		document.getElementById('returnPMI').innerHTML = accounting.formatMoney(pmiRate);
+		document.getElementById('returnFees').innerHTML = accounting.formatMoney(assFees);
+
+	}
+//-->
+</script>
+<!-- /Mortgage Caculator -->
+
+<!-- Responsive iframe -->
+<style>
+iframe {max-width: 100%;}
+</style>
+
+<script>
+function adjustIframes() {
+    $('.responsiveIframe').each(function() {
+        var
+			$this = $(this),
+			proportion = $this.data('proportion'),
+			w = $this.attr('width'),
+			actual_w = $this.width();
+
+        if (!proportion) {
+            proportion = $this.attr('height') / w;
+            $this.data('proportion', proportion);
+        }
+
+        if (actual_w !== w) {
+            $this.css('height', Math.round(actual_w * proportion) + 'px');
+        }
+    });
+}
+$(window).on('resize load',adjustIframes);
+</script>
+<!-- /Responsive iframe -->
+
+<!-- iframe refresh calendar on expand -->
+<script>
+$(document).on('pageinit', '#home', function(){ 
+	$(document).on( "expand", "#refresh", function( event, ui ){
+		var ifr = document.getElementsByName('calendar')[0];
+		ifr.src = ifr.src;
+	});    
+});
+</script>
+<!-- /iframe refresh calendar on expand -->
+
+<!-- iframe refresh spreadsheet on expand -->
+<script>
+$(document).on('pageinit', '#home', function(){ 
+	$(document).on( "expand", "#refresh2", function( event, ui ){
+		var ifr = document.getElementsByName('spreadsheet')[0];
+		ifr.src = ifr.src;
+	});    
+});
+</script>
+<!-- /iframe refresh spreadsheet on expand -->
+
+<!-- iframe refresh presentation on expand -->
+<script>
+$(document).on('pageinit', '#home', function(){ 
+	$(document).on( "expand", "#refresh3", function( event, ui ){
+		var ifr = document.getElementsByName('presentation')[0];
+		ifr.src = ifr.src;
+	});    
+});
+</script>
+<!-- /iframe refresh presentation on expand -->
+
+</head> 
+
+<body>
+
+<!-- Home -->
+<div data-role="page" data-theme="a" id="home"> 
+  <div data-role="header" data-theme="a" class="center">
+    <img src="img/logo.png" alt="logo">
+    <a href="#help" data-rel="popup" data-position-to="window" data-transition="pop" data-icon="alert" class="ui-btn-right">Help</a>
+	<div data-role="navbar" data-iconpos="top">
+		<ul>
+			<li><a href="#home" data-icon="home">Home</a></li>
+			<li><a href="#examples" data-icon="grid">Examples</a></li>
+		</ul>
+	</div><!-- /navbar -->  
+  </div><!-- /header -->
+  
+<div data-role="content">
+    <!-- Help Popup-->
+    <div data-role="popup" id="help" data-overlay-theme="b" data-theme="a" style="max-width:500px;" class="ui-corner-all help">
+        <div data-role="header" data-theme="a" class="center">
+            <img src="img/logo2.png" alt="logo">
+        </div>
+        <div data-role="content" style="background-color:#fff;">
+            <h2>How does this work?</h2>
+            <p><strong>Send a referral</strong><br>
+            Tap the &quot;Email Referral&quot; button and enter the email address of the person you want to refer into the &quot;Referral Email&quot; field, enter your name into the &quot;Your Name&quot; field and if you would like to include any other information enter it into the &quot;Message&quot; field. Once you are done tap the &quot;Submit&quot; button and an email will be sent to the email address provided. An email alert will also be sent to 
+            <!---->App-Platform.net for tracking purposes.</p>
+            <p><strong>Send this app</strong><br>
+            Tap the &quot;Send this app&quot; button and enter the email address of the person you want to send the app into the &quot;Email&quot; field and enter your name into the &quot;Your Name&quot; field. Once you are done tap the &quot;Submit&quot; button and an email will a link to the apps Landing Page be sent to the email address provided. An email alert will also be sent to 
+            <!---->App-Platform.net for tracking purposes.</p>
+    		<p><strong>Contact</strong><br>
+		  	The buttons under the Contact heading allow for contact with 
+            <!---->App-Platform.net, including email, our website and our facebook page.</p>
+    		<p><strong>App Examples</strong><br>
+			The buttons under App Examples include examples of several of our apps in action. These are weblinks to the live apps online. The  apps will be running in your devices web browser however the experience will be  approximately the same as if the app were installed on your device. </p>
+    		<p><strong>Get Your Own App</strong><br>
+   		    Tap the &quot;Get your own app!&quot; button and enter the email address of the person interested in getting more information about apps from App-Platform.net in the &quot;Email&quot; field. Once you are done tap the &quot;Submit&quot; button and a representative of App-Platform.net will be in touch.</p>
+        	<p><strong>Learn more</strong><br>
+            Go to <a href="http://app-platform.net" rel="external" target="_blank">App-Platform.net</a> to learn more about this app and others.</p>
+            <!-- Phonegap external link
+            Go to <a target="_blank" onClick="window.open('http://app-platform.net', '_system', 'location=yes');">App-Platform.net</a> to learn more about this app and others.></p>
+            -->
+        </div>
+        <div data-role="footer" class="center">
+            <a href="#" data-role="button" data-inline="true" data-theme="a" data-rel="back" data-icon="delete" style="margin-top:10px; margin-bottom:10px;">Close Window</a>
+        </div>
+    </div><!-- /help popup -->
+
+    <h1 class="center"><a id="body" href="tel:8885590902">(888) 559-0902</a></h1>
+    
+<!-- Slideshow -->    
+    <div class="flexslider">
+      <ul class="slides">
+        <li>
+          <img src="slideshow/slides/slide-03.jpg" />
+          <p class="flex-caption">Brand yourself. Share yourself. Get referrals.</p>
+        </li>
+        <li>
+          <img src="slideshow/slides/slide-02.jpg" />
+          <p class="flex-caption">Make your work flow mobile.</p>
+        </li>
+        <li>
+          <img src="slideshow/slides/slide-01.jpg" />
+          <p class="flex-caption">Custom mobile websites. Mobilize existing websites.</p>
+        </li>
+      </ul>
+    </div>
+<!-- /Slideshow -->
+
+<div class="container_12">
+    <div class="grid_5 ui-block960-a">
+    
+        <!-- Email referral -->
+        <a id="emailRefBtn" href="" target="_blank" data-role="button" data-icon="email">Email Referral</a>
+        <form id="emailReferral" class="emailReferral" method="post" data-ajax="false" style="display:none; padding-left:10px; padding-right:10px; padding-bottom:20px;">
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="Email">Referral Email</label>
+          <input type="text" name="Email" id="Email" value="" placeholder="Referral Email" class="required email" data-mini="true" />
+        </div>
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="Name">Your Name</label>
+          <input type="text" name="Name" id="Name" value="" placeholder="Your Name" data-mini="true" class="required" />
+        </div>
+        <label for="Message"><span class="smallText">Message (optional)</span></label>
+        <textarea name="Message" id="Message" style="background:#ffffff;" data-mini="true"></textarea>
+        
+        <div data-role="controlgroup" data-type="horizontal" style="margin-left:-10px;">
+        <input type="submit" id="post_submit" name="submit" value="Submit" class="submit-value" data-inline="true" data-mini="true" data-icon="check" />
+        <a href="#help" data-role="button" data-rel="popup" data-position-to="window" data-transition="pop" data-mini="true" data-icon="alert">Help</a>
+        <a id="emailRefReset" href="" data-role="button" data-inline="true" data-mini="true" data-icon="delete">Clear</a>
+        </div>
+        </form><!-- /email referral -->
+        
+        <!-- Send this app -->
+        <a id="sendAppBtn" href="" target="_blank" data-role="button" data-icon="email">Send this app</a>
+        <form id="sendApp" class="sendApp" method="post" data-ajax="false" style="display:none; padding-left:10px; padding-right:10px; padding-bottom:20px;">
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="Email">Email</label>
+          <input type="text" name="Email" id="Email" value="" placeholder="Email" class="required email" data-mini="true" />
+        </div>
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="Name">Your Name</label>
+          <input type="text" name="Name" id="Name" value="" placeholder="Your Name" data-mini="true" class="required" />
+        </div>
+        
+        <div data-role="controlgroup" data-type="horizontal" style="margin-left:-10px;">
+        <input type="submit" id="post_submit" name="submit" value="Submit" class="submit-value" data-inline="true" data-mini="true" data-icon="check" />
+        <a href="#help" data-role="button" data-rel="popup" data-position-to="window" data-transition="pop" data-mini="true" data-icon="alert">Help</a>
+        <a id="sendAppReset" href="" data-role="button" data-inline="true" data-mini="true" data-icon="delete">Clear</a>
+        </div>
+        </form><!-- /send this app -->
+
+		<br />
+        <p><strong>Contact</strong></p>
+        <a href="tel:8885590902" data-role="button" data-icon="phone">(888) 559-0902</a>
+        <a href="mailto:info@app-platform.net" target="_blank" data-role="button" data-icon="email">info@app-platform.net</a>
+        <a href="http://app-platform.net" rel="external" data-role="button" data-icon="home" target="_blank">www.app-platform.net</a>
+        <!-- Phonegap external link
+        <a data-role="button" data-icon="home" target="_blank" onClick="window.open('http://www.app-platform.net', '_system', 'location=yes');">www.app-platform.net</a>
+        -->
+        <a href="http://www.facebook.com/AppPlatformnet" rel="external" data-role="button" data-icon="facebook" target="_blank">facebook</a>
+        <!-- Phonegap external link
+        <a data-role="button" data-icon="facebook" target="_blank" onClick="window.open('http://www.facebook.com/AppPlatformnet', '_system', 'location=yes');">facebook</a>
+        -->
+        <a href="http://www.linkedin.com/company/2779772" rel="external" data-role="button" data-icon="linkedin" target="_blank">linkedin</a>
+        <!-- Phonegap external link
+        <a data-role="button" data-icon="linkedin" target="_blank" onClick="window.open('http://www.linkedin.com/company/2779772t', '_system', 'location=yes');">linkedIn</a>
+        -->
+    </div><!-- /block a -->
+    
+    <div class="grid_7 ui-block960-b">
+
+    <p><strong>Addon Modules</strong></p>        
+
+<!-- Mortgage Calculator -->    
+    <div data-role="collapsible" data-collapsed="true">
+    <h2>Mortgage Calculator</h2>        
+    <form name="mortgageCalk" data-ajax="false" style="float:left;">
+    <!--
+    <div class="ui-hide-label" style="margin-top:20px;">
+        <div style="float:left; margin-top:10px;">Loan Type</div>
+        <div style="float:left;"><select name="loanType" data-inline="true" data-mini="true" />
+            <option value="10" Selected>Conventional</option>
+            <option value="20">FHA</option>
+            <option value="VA">VA</option>
+            <option value="USDA">USDA</option>
+        </select></div>
+    </div>
+    -->
+    <div class="ui-hide-label" style="margin-top:20px;">
+        <div style="float:none;">Purchase Price</div>
+        <div style="float:left; margin-top:10px;">$&nbsp;</div>
+        <div style="float:left;"><input type="text" name="price" id="price" value="300000" onBlur="checkForZero(this.form)" onChange="checkForZero(this.form)" data-mini="true"></div>
+        <div id="error1" style="font-weight:bold; display:none;">Error</div>
+    </div>
+    
+    <div class="ui-hide-label" style="margin-top:50px;">
+        <div style="float:none;">Down Payment</div>
+        <div style="float:left; margin-top:10px;">$&nbsp;</div>
+        <div style="float:left;"><input type="text" name="dp" value="0"  onChange="calculatePayment(this.form)" data-mini="true"></div>
+    </div>
+    
+    <div class="ui-hide-label" style="margin-top:50px;">
+        <div style="float:none;">Interest Rate</div>
+        <div style="float:left;"><input type="text" name="ir" value="3.5" onBlur="checkForZero(this.form)" onChange="checkForZero(this.form)" data-mini="true"></div>
+        <div style="float:left; margin-top:10px;">&nbsp; &nbsp; %</div>
+    </div>
+    
+    <div class="ui-hide-label" style="margin-top:50px;">
+        <div style="float:left; margin-top:10px;">Loan Term</div>
+        <div style="float:left;"><select name="term" data-inline="true" data-mini="true" />
+            <option value="30" Selected>30 Years</option>
+            <option value="25">25 Years</option>
+            <option value="20">20 Years</option>
+            <option value="15">15 Years</option>
+            <option value="10">10 Years</option>
+        </select></div>
+    </div>
+    
+    <div class="ui-hide-label" style="margin-top:100px;">
+        <div style="float:none;">Property Taxes</div>
+        <div style="float:left; margin-top:10px;">$&nbsp;</div>
+        <div style="float:left;"><input type="text" name="pt" value="0"  onChange="calculatePayment(this.form)" data-mini="true"></div>
+    </div>
+    
+    <div class="ui-hide-label" style="margin-top:50px;">
+        <div style="float:none;">Home Ownlers Ins.</div>
+        <div style="float:left; margin-top:10px;">$&nbsp;</div>
+        <div style="float:left;"><input type="text" name="ins" value="0"  onChange="calculatePayment(this.form)" data-mini="true"></div>
+    </div>
+    
+    <div class="ui-hide-label" style="margin-top:50px;">
+        <div style="float:none;">Mortgage Ins. (PMI)</div>
+        <div style="float:left; margin-top:10px;">$&nbsp;</div>
+        <div style="float:left;"><input type="text" name="pmi" value="0"  onChange="calculatePayment(this.form)" data-mini="true"></div>
+    </div>
+    
+    <div class="ui-hide-label" style="margin-top:50px;">
+        <div style="float:none;">Association fees (monthly)</div>
+        <div style="float:left; margin-top:10px;">$&nbsp;</div>
+        <div style="float:left;"><input type="text" name="fees" value="0"  onChange="calculatePayment(this.form)" data-mini="true"></div>
+    </div>
+    
+    
+    <div style="margin-top:50px;">
+    <input type="button" name="cmdCalc" value="Calculate" onClick="cmdCalc_Click(this.form)" class="submit-button" data-mini="true">
+    </div>
+    
+    </form>
+    
+    <div class="shadow results" style="margin-top:20px;">
+        Mortgage Principle <div id="returnPrinciple" style="font-weight:bold;"></div>
+        
+        <div style="margin-top:20px;">
+        Total Payments <div id="returnPayment" style="font-weight:bold;"></div>
+        </div>
+        
+        <div style="margin-top:20px;">
+        Taxes <div id="returnTaxes" style="font-weight:bold;"></div>
+        </div>
+        
+        <div style="margin-top:20px;">
+        Mortgage Ins. <div id="returnPMI" style="font-weight:bold;"></div>
+        </div>
+        
+        <div style="margin-top:20px;">
+        Home Owners Ins. <div id="returnINS" style="font-weight:bold;"></div>
+        </div>
+        
+        <div style="margin-top:20px;">
+        Association fees <div id="returnFees" style="font-weight:bold;"></div>
+        </div>
+        
+        <div style="margin-top:20px;">
+        Monthly Payment <div id="returnMonthly" style="font-weight:bold;"></div>
+        </div>
+        
+        <!--
+        <div style="margin-top:20px;">
+        Loan Mod<div id="returnLoan" style="font-weight:bold;"></div>
+        </div>
+        -->
+    </div>
+    <div style="clear:both;"></div>
+    <p class="smallText">This is not a commitment to lend.  This is for illustrative purposes only and estimates are based on information you provided.  Interest rates, mortgage insurance rates, and programs are subject to credit approval and available rates and terms will vary, sometimes drastically, based on borrower eligibility and program selected.  For accurate interest rates and mortgage insurance rates please contact your loan officer.</p>
+    </div>
+<!-- /Mortgage Calculator -->    
+    
+<!-- Google Calander -->    
+    <div data-role="collapsible" data-collapsed="true" id="refresh">
+    <h2>Google Calander</h2>
+    <iframe name="calendar" src="https://www.google.com/calendar/embed?showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=500&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=hiqkeensk1uti4348ijbd7h8ro%40group.calendar.google.com&amp;color=%23B1440E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23711616&amp;src=p%23weather%40group.v.calendar.google.com&amp;color=%2329527A&amp;ctz=America%2FChicago" style=" border-width:0 " width="800" height="500" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div style="clear:both;"></div>
+<!-- /Google Calander --> 
+
+<!-- Google Doc -->   
+    <div data-role="collapsible" data-collapsed="true">
+    <h2>Google Doc</h2>
+    <iframe width="800px" height="400px" src="https://docs.google.com/document/d/1c5ZBTs_m9T4DlKat2tSqn03hR1_OSTV5eAOpy-ulzCs/pub?embedded=true"></iframe>
+    </div>
+    <div style="clear:both;"></div>
+<!-- /Google Doc -->
+
+<!-- Google Spreadsheet -->    
+    <div data-role="collapsible" data-collapsed="true" id="refresh2">
+    <h2>Google Spreadsheet</h2>
+    <iframe name="spreadsheet" width="800" height="300" frameborder="0" src='https://docs.google.com/spreadsheet/pub?key=0AuTiZ9-17cb0dHJUdENRZWFEX2VzY1BEU2kzalloWEE&output=html&widget=true'></iframe>
+    </div>
+    <div style="clear:both;"></div>
+<!-- /Google Spreadsheet -->
+
+<!-- Google Presentation [Doesn't work on Windows Phones]   
+    <div data-role="collapsible" data-collapsed="true" id="refresh3">
+    <h2>Google Presentation</h2>
+    <iframe name="presentation" src="https://docs.google.com/presentation/d/1GGhQClnDfBN-bwvUigz2OdMvIe9EpEzyUmuyA9prDAk/embed?start=false&loop=false&delayms=5000" frameborder="0" width="960" height="350" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div>
+    <div style="clear:both;"></div>
+<!-- /Google Presentation --> 
+
+<!-- YouTube -->
+    <div data-role="collapsible" data-collapsed="true">
+    <h2>YouTube</h2>
+    <iframe width="500" height="350" src="http://www.youtube.com/embed/tiUS9Clciq0?wmode=opaque&showinfo=0&rel=0&autoplay=0&hd=1&vq=hd720" frameborder="0" allowfullscreen></iframe>
+    <a href="https://www.youtube.com/watch?v=tiUS9Clciq0" data-role="button" target="_blank">View on YouTube</a>
+    </div>
+    <div style="clear:both;"></div>
+<!-- /YouTube --> 
+
+		<br />   
+    
+        <div data-role="collapsible" data-collapsed="true">
+        <h2>Request More Information</h2>        
+          <form id="form1" class="form1" method="post" data-ajax="false">
+        	I would like someone from App-Platform.net to contact me.
+            <div data-role="fieldcontain" class="ui-hide-label">
+              <label for="Name">Name:</label>
+              <input type="text" name="Name" id="Name" value="" placeholder="Name" data-mini="true" />
+            </div>
+            <div data-role="fieldcontain" class="ui-hide-label">
+              <label for="Phone">Phone:</label>
+              <input type="text" name="Phone" id="Phone" value="" placeholder="Phone" data-mini="true" />
+            </div>
+            <div data-role="fieldcontain" class="ui-hide-label">
+              <label for="Email">Email:</label>
+              <input type="text" name="Email" id="Email" value="" placeholder="Email *" class="required email" data-mini="true" />
+            </div>
+            <div>
+              <fieldset data-role="controlgroup" data-mini="false">
+                <legend>Preferred Means for Us to Contact You:</legend>
+                <input type="radio" name="radiomini" id="radiomini1" data-mini="true" value="Phone" />
+                <label for="radiomini1">Phone</label>
+                <input type="radio" name="radiomini" id="radiomini2" data-mini="true" value="Email"  />
+                <label for="radiomini2">Email</label>
+                <input type="radio" name="radiomini" id="radiomini3" data-mini="true" value="Text"  />
+                <label for="radiomini3">Text</label>
+              </fieldset>
+            </div>
+            <label for="Message">Message:</label>
+            <textarea name="Message" id="Message" style="background:#ffffff;"></textarea>
+            <input type="submit" id="post_submit" name="submit" value="Submit" class="submit-value" data-inline="true" />
+            <br>
+            <span class="smallText">* Required field.</span>
+          </form>
+          <p class="thanks1" style="display:none"> <br>
+            <br>
+            <span class="headerText">Thank You</span><br>
+            <br>
+            Your information has been submitted. One of our representatives will contact you soon.<br>
+            <br>
+            <a id="reset_button1" href="" data-role="button" data-inline="true">Reset Form</a>
+          <br>
+          <br> 
+          </p>
+        </div>
+	<br />
+    <p><strong>Info</strong></p>
+    <div data-role="collapsible" data-collapsed="true">
+        <h2>Ultimate Business Card</h2>
+        <img src="img/pricingUBC.png" alt="Apps Starting at $50 down + $20/month" class="right">
+        <h3>Brand. Refer. Capitalize.</h3>
+		<p>The Ultimate Business Card App is an unlimited, trackable, business card that functions as a limitless referral source for you and your business. Whether you or a referral partner are giving out your information, you'll see who recommended you and you'll get the email address of the person to whom you are being recommended. You will never have to wait for referrals to contact you off a buisiness card that you didn't eeven know was handed out. NOW you are in control of the entire referral process.</p>
+        <p>Starting at just $50 down and $20/month with no contract, the Ultimate Business Card App is the easiest way to get yourself mobile. At that price you get an easy to distribute app with all of your contact info, custom referral email, and photo gallery all tailored to your particular business. Want to add additional information and features? No problem! Just let us know what you want and we will get you a quote; most add-ons run between $50 to $100, so we are still the best deal in the app world!</p>
+        <p><strong>Our Ultimate Business Card App includes:</strong></p>
+        <ul>
+            <li>A page with simple instructions on loading your app</li>
+            <li>Your app on Google Play Marketplace</li>
+            <li>One page for your information</li>
+            <li>One custom email referral link</li>
+            <li>One custom map link</li>
+            <li>Custom header logos</li>
+            <li>Custom loading page</li>
+            <li>Custom smart phone icons</li>
+            <li>User up datable photo gallery</li>
+        </ul>
+        <a href="#examples" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-icon="arrow-r">View Examples</a>
+    </div>
+        
+    <div data-role="collapsible" data-collapsed="true">
+        <h2>Custom Apps</h2>
+        <img src="img/pricingCustom.png" alt="Apps Starting at $100 down + $20/month" class="right">
+        <h2>Do More with Mobile.</h2>
+        <p>Anything you can do on the web we can do in an app! You can take payments on your mobile device, why not handle the rest of the sale on that same device? Want to capture information in the field in real-time? Schedule appointments anytime anywhere? We can help integrate your existing web services into an app that you control.</p>
+        <p>Whether you already have your app idea or are not sure how best to leverage mobile to improve your business, we can help. Give us a call or drop us an email and we will be happy to help you navigate all of the options and make sure you get the right product for your needs.</p>
+        <a href="#examples" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-icon="arrow-r">View Examples</a>
+    </div>
+        
+    <div data-role="collapsible" data-collapsed="true">
+        <h1>Web Development</h1>
+        <h2>Responsive Design, Mobile Sites and More.</h2>
+        <p>"Mobile to overtake fixed Internet access by 2014" is a widely used quote from one study. Others state they expect mobile usage to dominate in the next three years. Regardless, one thing is clear and that's mobile internet usage is the next big thing in internet traffic. Half of the internet searches being made today are on a mobile device, is your website mobile ready? What about a tie-in app for your business? Do you need an internal application to make your company more agile and functional? We're here to help!</p>
+        <a href="#examples" data-role="button" data-inline="true" data-mini="true" data-theme="a" data-icon="arrow-r">View Examples</a>
+    </div>
+        
+    <div data-role="collapsible" data-collapsed="true">
+        <h2>FAQ's</h2>
+        <p>Q: <strong>Why do I need an App?</strong><br>
+            A: Think of it as another tool to help your business. Just as having a website became a necessity, so too will mobile / web applications. Our flagship Unlimited Business Card App is the perfect referral tool for your business.</p>
+        <p>Q: <strong>Does the person I want to send my info to have to have a smart phone?</strong><br>A: Nope! Only the person sending the info has to have the smart phone.</p>
+        <p>Q: <strong>What smart phones / tablets work?</strong><br>
+            A: Devices running iOS (iPhone, iPad and iPod touch), Android devices (Droid, Nexus, etc.), Windows Phones and newer Blackberry devices. Pretty much anything that has a web browser will work!</p>
+        <p>Q: <strong>Why do I need hosting?</strong><br>
+            A: To make the app as easy as possible to distribute we create a webpage with instructions on loading the app on various devices. Also, some smart phones will use a web version of the app and information has to "live" somewhere.</p>
+        <p>Q: <strong>What the heck is a subdomain?</strong><br>
+            A: It is a prefix to a web address, for example <strong>YourApp</strong>.app-platform.net.</p>
+        <p>Q: <strong>Will my app have an icon or do I get that stupid bookmark icon?</strong><br>
+            A: Your app will have custom icons on iDevices, Android devices, and windows phones!</p>
+        <p>Q: <strong>Will my app be in the Google Play Store (Android Market)?</strong><br>
+            A: Yes! We submit all of our apps to Google so your app will be searchable.</p>
+        <p>Q: <strong>Will my app be in the iTunes store?</strong><br>
+            A: Unfortunately submitting apps to the iTunes store is costly and can take a very long time. However, our web app functions exactly like an app from iTunes with custom icons and loading screens. If you would like to submit your app to Apple App Store yourself, we will compile an iTunes friendly version of your app at no additional charge.</p>
+    </div>
+    
+    </div><!-- /block b -->
+</div><!-- /container -->
+</div><!-- /content -->
+
+<div data-role="footer" data-theme="a">
+    <div class="footerText" class="center" style="margin-top:15px; margin-bottom:15px;">
+        <!-- Get your own app -->
+        <a id="getYourOwnAppBtn" href="" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a>
+        <form id="getYourOwnApp" class="getYourOwnApp" method="post" data-ajax="false" style="display:none;">
+        <div style="margin-left:auto; margin-right:auto; max-width:250px; margin-top:-10px;">
+            <div data-role="fieldcontain" class="ui-hide-label">
+              <label for="Email">Email</label>
+              <input type="text" name="Email" id="Email" value="" placeholder="Email" class="required email" data-mini="true" />
+            </div>
+            <div data-role="controlgroup" data-type="horizontal">
+            <input type="submit" id="post_submit" name="submit" value="Submit" class="submit-value" data-inline="true" data-mini="true" data-icon="check" />
+            <a id="getYourOwnAppReset" href="" data-role="button" data-inline="true" data-mini="true" data-icon="delete">Clear</a>
+            </div>
+        </div>
+        </form><!-- /get your own app -->
+        <div style="clear:both"></div>
+        <p><script type="text/javascript">
+            copyright=new Date(); update=copyright.getFullYear(); document.write("&nbsp;Copyright &copy; "+ update + " App-Platform.net");
+        </script></p>
+    </div><!-- /footerText -->
+</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Examples Page -->
+<div data-role="page" data-theme="a" id="examples"> 
+  <div data-role="header" data-theme="a" class="center">
+    <img src="img/logo.png" alt="logo">
+    <a href="#help" data-rel="popup" data-position-to="window" data-transition="pop" data-icon="alert" class="ui-btn-right">Help</a>
+	<div data-role="navbar" data-iconpos="top">
+		<ul>
+			<li><a href="#home" data-icon="home">Home</a></li>
+			<li><a href="#examples" data-icon="grid">Examples</a></li>
+		</ul>
+	</div><!-- /navbar -->  
+  </div>
+  
+	<div data-role="content">
+    <!-- Help Popup-->
+    <div data-role="popup" id="help" data-overlay-theme="b" data-theme="a" style="max-width:500px;" class="ui-corner-all help">
+        <div data-role="header" data-theme="a" class="center">
+            <img src="img/logo2.png" alt="logo">
+        </div>
+        <div data-role="content">
+            <h2>How does this work?</h2>
+            <h2>How does this work?</h2>
+            <p><strong>Send a referral</strong><br>
+            Tap the &quot;Email Referral&quot; button and enter the email address of the person you want to refer into the &quot;Referral Email&quot; field, enter your name into the &quot;Your Name&quot; field and if you would like to include any other information enter it into the &quot;Message&quot; field. Once you are done tap the &quot;Submit&quot; button and an email will be sent to the email address provided. An email alert will also be sent to App-Platform.net for tracking purposes.</p>
+            <p><strong>Send this app</strong><br>
+            Tap the &quot;Send this app&quot; button and enter the email address of the person you want to send the app into the &quot;Email&quot; field and enter your name into the &quot;Your Name&quot; field. Once you are done tap the &quot;Submit&quot; button and an email will a link to the apps Landing Page be sent to the email address provided. An email alert will also be sent to App-Platform.net for tracking purposes.</p>
+    		<p><strong>Contact</strong><br>
+		  	The buttons under the Contact heading allow for contact with App-Platform.net, including email, our website and our facebook page.</p>
+    		<p><strong>App Examples</strong><br>
+			The buttons under App Examples include examples of several of our apps in action. These are weblinks to the live apps online. The  apps will be running in your devices web browser however the experience will be  approximately the same as if the app were installed on your device. </p>
+    		<p><strong>Get Your Own App</strong><br>
+   		    Tap the &quot;Get your own app!&quot; button and enter the email address of the person interested in getting more information about apps from App-Platform.net in the &quot;Email&quot; field. Once you are done tap the &quot;Submit&quot; button and a representative of App-Platform.net will be in touch.</p>
+        	<p><strong>Learn more</strong><br>
+            Go to <a href="http://app-platform.net" rel="external" target="_blank">App-Platform.net</a> to learn more about this app and others.</p>
+            <!-- Phonegap external link
+            Go to <a target="_blank" onClick="window.open('http://app-platform.net', '_system', 'location=yes');">App-Platform.net</a> to learn more about this app and others.></p>
+            -->
+        </div>
+        <div data-role="footer" class="center">
+            <a href="#" data-role="button" data-inline="true" data-theme="a" data-rel="back" data-icon="delete" style="margin-top:10px; margin-bottom:10px;">Close Window</a>
+        </div>
+    </div><!-- /help popup -->
+
+<div class="container_12">
+	<div class="grid_6 ui-block960-a">
+        <p><strong>Ultimate Business Card examples</strong></p>
+        <a href="http://joeytork.app-platform.net/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Joey Torkildson</a>
+        <!-- Phonegap external link
+        <a data-role="button" data-icon="info" target="_blank" onClick="window.open('http://joeytork.app-platform.net/webapp.htm', '_system', 'location=yes');">Joey Torkildson</a>
+        -->
+        <a href="http://lakecountry.app-platform.net/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Lake Country Ins.</a>
+        <!-- Phonegap external link
+        <a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://lakecountry.app-platform.net/webapp.htm');">Lake Country Ins.</a>
+        -->
+        <a href="http://pyxissolutions.com/app/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Pyxis Solutions</a>
+        <!-- Phonegap external link
+        <a data-role="button" data-icon="info" target="_blank" onClick="window.open('http://pyxissolutions.com/app/webapp.htm', '_system', 'location=yes');">Pyxis Solutions</a>
+        -->
+        <br />
+        <p><strong>Custom App examples</strong></p>
+        <a href="http://app-platform.net/sicora/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Sicora</a>
+        <!-- Phonegap external link
+        <a data-role="button" data-icon="info" target="_blank" onClick="window.open('http://app-platform.net/sicora/webapp.htm', '_system', 'location=yes');">Sicora</a>
+        -->
+        <a href="http://twincitiesnorth.com/app/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Twin Cities North</a>
+        <!-- Phonegap external link
+        <a data-role="button" data-icon="info" target="_blank" onClick="window.open('http://twincitiesnorth.com/app/webapp.htm', '_system', 'location=yes');">Twin Cities North</a>
+        -->
+        <a href="http://networkunlimited.app-platform.net/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Network Unlimited</a>
+        <!-- Phonegap external link
+        <a data-role="button" data-icon="info" target="_blank" onClick="window.open('http://networkunlimited.app-platform.net/webapp.htm', '_system', 'location=yes');">Network Unlimited</a>
+        -->
+    </div><!-- /block a -->
+    
+	<div class="grid_6 ui-block960-b">
+       <p><strong>App Screenshots</strong></p>
+        <div id="gallery_1"></div>
+        <hr width="100%" style="visibility:hidden;">
+    </div><!-- block b -->
+</div><!-- /container -->
+</div><!-- /content -->  
+
+<div data-role="footer" data-theme="a">
+    <div class="footerText">
+        <!-- Get your own app -->
+        <a id="getYourOwnAppBtn2" href="" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a>
+        <form id="getYourOwnApp2" class="getYourOwnApp2" method="post" data-ajax="false" style="display:none;">
+        <div style="margin-left:auto; margin-right:auto; max-width:250px; margin-top:-10px;">
+            <div data-role="fieldcontain" class="ui-hide-label">
+              <label for="Email">Email</label>
+              <input type="text" name="Email" id="Email" value="" placeholder="Email" class="required email" data-mini="true" />
+            </div>
+            <div data-role="controlgroup" data-type="horizontal">
+            <input type="submit" id="post_submit" name="submit" value="Submit" class="submit-value" data-inline="true" data-mini="true" data-icon="check" />
+            <a id="getYourOwnAppReset2" href="" data-role="button" data-inline="true" data-mini="true" data-icon="delete">Clear</a>
+            </div>
+        </div>
+        </form><!-- /get your own app -->
+        <div style="clear:both"></div>
+		<p><script>
+            copyright=new Date(); update=copyright.getFullYear(); document.write("&nbsp;Copyright &copy; "+ update + " App-Platform.net");
+        </script></p>
+    </div>
+</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Bump Headers -->
+<script>
+$(".grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12").find("p").css("margin-left", "10px");
+</script>
+
+<!-- Call Colorbox -->
+<script type="text/javascript">
+
+  $(document).one('pageshow', '#examples', function () {      
+    var settings = {
+      username: 'jimhunkinsent',
+      maxresults: 50,
+      mode: 'album',
+      album: 'AppPlatform',
+      thumbCrop: 1,
+      showAlbumDescription: false,
+    };
+      $("#gallery_1").pwi(settings);
+  });
+
+</script>
+
+<!-- Form Validation -->
+<script type="text/javascript">
+$(function() {
+    $( "#form1" ).validate({
+        submitHandler: function(form) {
+           var data= $(form).serialize()
+        
+                $.ajax({
+                type: "POST",
+				url: "php/infoRequest.php",
+                //url: "http://app.app-platform.net/php/infoRequest.php",
+                data: data,
+                success: function(){
+                    $(form).fadeOut();
+                          $('.thanks1').fadeIn(2500);
+                }
+                });
+            return false;
+        }
+    });
+});     
+</script>
+
+<!-- Form reset button -->
+<script type="text/javascript">
+$(function() { $('#reset_button1').click( function() { $('.thanks1').fadeOut(); $('.form1').fadeIn(2500); $("#form1")[0].reset(); });});
+</script>
+
+<!-- Email Referral Validation -->
+<script type="text/javascript">
+$(function() {
+    $( "#emailReferral" ).validate({
+        submitHandler: function(form) {
+           var data= $(form).serialize()
+        
+                $.ajax({
+                type: "POST",
+                url: "php/emailReferral.php",
+                //url: "http://app.app-platform.net/php/emailReferral.php",
+                data: data,
+                success: function(){
+                    $(form).fadeOut();
+                }
+                });
+            return false;
+        }
+    });
+});     
+</script>
+
+<!-- Send App Validation -->
+<script type="text/javascript">
+$(function() {
+    $( "#sendApp" ).validate({
+        submitHandler: function(form) {
+           var data= $(form).serialize()
+        
+                $.ajax({
+                type: "POST",
+                url: "php/sendApp.php",
+                //url: "http://app.app-platform.net/php/sendApp.php",
+                data: data,
+                success: function(){
+                    $(form).fadeOut();
+                }
+                });
+            return false;
+        }
+    });
+});     
+</script>
+
+<!-- Get Your Own App Validation -->
+<script type="text/javascript">
+$(function() {
+    $( "#getYourOwnApp" ).validate({
+        submitHandler: function(form) {
+           var data= $(form).serialize()
+        
+                $.ajax({
+                type: "POST",
+                url: "php/getYourOwnApp.php",
+                //url: "http://app.app-platform.net/php/getYourOwnApp.php",
+                data: data,
+                success: function(){
+                    $(form).fadeOut();
+                }
+                });
+            return false;
+        }
+    });
+});     
+
+$(function() {
+    $( "#getYourOwnApp2" ).validate({
+        submitHandler: function(form) {
+           var data= $(form).serialize()
+        
+                $.ajax({
+                type: "POST",
+                url: "php/getYourOwnApp.php",
+                //url: "http://app.app-platform.net/php/getYourOwnApp.php",
+                data: data,
+                success: function(){
+                    $(form).fadeOut();
+                }
+                });
+            return false;
+        }
+    });
+});     
+</script>
+
+<script>
+<!-- Email referral button -->
+$(function() {$("#emailRefBtn").toggle(function(){$("#emailReferral").show();},function(){$("#emailReferral").hide(); $("#emailReferral")[0].reset();});});
+$(function() {$('#emailRefReset').click( function() { $("#emailReferral")[0].reset(); });});
+
+<!-- Send App button -->
+$(function() {$("#sendAppBtn").toggle(function(){$("#sendApp").show();},function(){$("#sendApp").hide(); $("#sendApp")[0].reset();});});
+$(function() {$('#sendAppReset').click( function() { $("#sendApp")[0].reset(); });});
+
+<!-- Get Your Own App button -->
+$(function() {$("#getYourOwnAppBtn").toggle(function(){$("#getYourOwnApp").show();},function(){$("#getYourOwnApp").hide(); $("#getYourOwnApp")[0].reset();});});
+$(function() {$('#getYourOwnAppReset').click( function() { $("#getYourOwnApp")[0].reset(); });});
+
+$(function() {$("#getYourOwnAppBtn2").toggle(function(){$("#getYourOwnApp2").show();},function(){$("#getYourOwnApp2").hide(); $("#getYourOwnApp2")[0].reset();});});
+$(function() {$('#getYourOwnAppReset2').click( function() { $("#getYourOwnApp2")[0].reset(); });});
+</script>
+
+</body>
+</html>
