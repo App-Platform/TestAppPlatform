@@ -156,7 +156,7 @@ $(window).on('resize load',adjustIframes);
 <script>
 $(document).on('pageinit', '#home', function(){ 
 	$(document).on( "expand", "#refresh", function( event, ui ){
-		reload(); 
+		refresh(); 
 	});    
 });
 </script>
@@ -166,8 +166,7 @@ $(document).on('pageinit', '#home', function(){
 <script>
 $(document).on('pageinit', '#home', function(){ 
 	$(document).on( "expand", "#refresh2", function( event, ui ){
-		reload(); 
-        return true;
+		refresh();
 	});    
 });
 </script>
