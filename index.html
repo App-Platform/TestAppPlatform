@@ -152,38 +152,6 @@ $(window).on('resize load',adjustIframes);
 </script>
 <!-- /Responsive iframe -->
 
-<!-- iframe refresh calendar on expand -->
-<script>
-$(document).on('pageinit', '#home', function(){ 
-	$(document).on( "expand", "#refresh", function( event, ui ){
-		var ifr = document.getElementsByName('calendar')[0];
-		ifr.src = ifr.src;
-	});    
-});
-</script>
-<!-- /iframe refresh calendar on expand -->
-
-<!-- iframe refresh spreadsheet on expand -->
-<script>
-$(document).on('pageinit', '#home', function(){ 
-	$(document).on( "expand", "#refresh2", function( event, ui ){
-		var ifr = document.getElementsByName('spreadsheet')[0];
-		ifr.src = ifr.src;
-	});    
-});
-</script>
-<!-- /iframe refresh spreadsheet on expand -->
-
-<!-- iframe refresh presentation on expand -->
-<script>
-$(document).on('pageinit', '#home', function(){ 
-	$(document).on( "expand", "#refresh3", function( event, ui ){
-		var ifr = document.getElementsByName('presentation')[0];
-		ifr.src = ifr.src;
-	});    
-});
-</script>
-<!-- /iframe refresh presentation on expand -->
 
 </head> 
 
