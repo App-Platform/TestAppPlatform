@@ -152,6 +152,28 @@ $(window).on('resize load',adjustIframes);
 </script>
 <!-- /Responsive iframe -->
 
+<!-- iframe refresh calendar on expand -->
+<script>
+$(document).on('pageinit', '#home', function(){ 
+	$(document).on( "expand", "#refresh", function( event, ui ){
+		WV.reload(); 
+        return true;
+	});    
+});
+</script>
+<!-- /iframe refresh calendar on expand -->
+
+<!-- iframe refresh spreadsheet on expand -->
+<script>
+$(document).on('pageinit', '#home', function(){ 
+	$(document).on( "expand", "#refresh2", function( event, ui ){
+		WV.reload(); 
+        return true;
+	});    
+});
+</script>
+<!-- /iframe refresh spreadsheet on expand -->
+
 
 </head> 
 
@@ -403,7 +425,7 @@ $(window).on('resize load',adjustIframes);
 <!-- /Mortgage Calculator -->    
     
 <!-- Google Calander -->    
-    <div data-role="collapsible" data-collapsed="false">
+    <div data-role="collapsible" data-collapsed="true" id="refresh">
     <h2>Google Calander</h2>
     <iframe name="calendar" src="https://www.google.com/calendar/embed?showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=500&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=hiqkeensk1uti4348ijbd7h8ro%40group.calendar.google.com&amp;color=%23B1440E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23711616&amp;src=p%23weather%40group.v.calendar.google.com&amp;color=%2329527A&amp;ctz=America%2FChicago" style=" border-width:0 " width="800" height="500" frameborder="0" scrolling="no"></iframe>
     </div>
@@ -419,7 +441,7 @@ $(window).on('resize load',adjustIframes);
 <!-- /Google Doc -->
 
 <!-- Google Spreadsheet -->    
-    <div data-role="collapsible" data-collapsed="true">
+    <div data-role="collapsible" data-collapsed="true" id="refresh2">
     <h2>Google Spreadsheet</h2>
     <iframe name="spreadsheet" width="800" height="300" frameborder="0" src='https://docs.google.com/spreadsheet/pub?key=0AuTiZ9-17cb0dHJUdENRZWFEX2VzY1BEU2kzalloWEE&output=html&widget=true'></iframe>
     </div>
