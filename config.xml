@@ -33,5 +33,6 @@
 	<gap:splash src="iconsAndroid/android-startup-image-720x1280.png" gap:platform="android" gap:density="xhdpi" />
 	
 	<gap:plugin name="org.apache.cordova.device" />
+	<plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
 
 </widget>
