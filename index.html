@@ -9,32 +9,6 @@
 <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
 <meta name="viewport" content="width=device-width" />
 
-<!-- iOS -->
-<meta name="apple-mobile-web-app-title" content="App-Platform.net">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-
-<!-- iPhone -->
-<link href="icn/apple-touch-icon-57x57.png" sizes="57x57" rel="apple-touch-icon">
-<link href="icn/apple-touch-startup-image-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
-
-<!-- iPhone (Retina) -->
-<link href="icn/apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon">
-<link href="icn/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-
-<!-- iPhone 5 -->
-<link href="icn/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-
-<!-- iPad -->
-<link href="icn/apple-touch-icon-72x72.png" sizes="72x72" rel="apple-touch-icon">
-<link href="icn/apple-touch-startup-image-768x1004.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
-<link href="icn/apple-touch-startup-image-748x1024.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
-
-<!-- iPad (Retina) -->
-<link href="icn/apple-touch-icon-144x144.png" sizes="144x144" rel="apple-touch-icon">
-<link href="icn/apple-touch-startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-<link href="icn/apple-touch-startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-
 <!-- CSS -->
 <link type="text/css" rel="stylesheet" href="css/jquery.mobile.structure-1.3.0.min.css" />
 <link type="text/css" rel="stylesheet" href="css/custom-theme.css" />
@@ -42,8 +16,6 @@
 <link type="text/css" rel="stylesheet" href="css/colorbox.css" />
 <link type="text/css" rel="stylesheet" href="css/pwi.css" />
 <link type="text/css" rel="stylesheet" href="css/app-platform.css" />
-
-<!--link type="text/css" rel="stylesheet" href="http://app-platform.net/min/b=sales/css&f=jquery.mobile.structure-1.3.0.min.css,custom-theme.css,jquery-mobile-fluid960.min.css,colorbox.css,pwi.css,app-platform.css" /-->
 
 <!-- ADD SCRIPTS -->
 
@@ -55,11 +27,9 @@
 <script type="text/javascript" src="js/jquery.pwi.js"></script>
 <script type="text/javascript" src="js/app-platform.js"></script>
 
-<!--script type="text/javascript" src="http://app-platform.net/min/b=sales/js&f=jquery-1.8.2.min.js,jquery.mobile-1.3.0.min.js,jquery.validate.min.js,jquery.colorbox.js,jquery.pwi.js,app-platform.js"></script-->
-
-<!-- Add PhoneGap 
+<!-- Add PhoneGap -->
 <script type="text/javascript" src="phonegap.js"></script>
--->
+
 
 <!-- Slideshow -->
 <link rel="stylesheet" href="slideshow/flexslider.css" type="text/css">
@@ -224,10 +194,7 @@ $(document).on('pageinit', '#home', function(){
     		<p><strong>Get Your Own App</strong><br>
    		    Tap the &quot;Get your own app!&quot; button and enter the email address of the person interested in getting more information about apps from App-Platform.net in the &quot;Email&quot; field. Once you are done tap the &quot;Submit&quot; button and a representative of App-Platform.net will be in touch.</p>
         	<p><strong>Learn more</strong><br>
-            Go to <a href="http://app-platform.net" rel="external" target="_blank">App-Platform.net</a> to learn more about this app and others.</p>
-            <!-- Phonegap external link
             Go to <a target="_blank" onClick="window.open('http://app-platform.net', '_system', 'location=yes');">App-Platform.net</a> to learn more about this app and others.></p>
-            -->
         </div>
         <div data-role="footer" class="center">
             <a href="#" data-role="button" data-inline="true" data-theme="a" data-rel="back" data-icon="delete" style="margin-top:10px; margin-bottom:10px;">Close Window</a>
@@ -261,6 +228,11 @@ $(document).on('pageinit', '#home', function(){
         <!-- Email referral -->
         <a id="emailRefBtn" href="" target="_blank" data-role="button" data-icon="email">Email Referral</a>
         <form id="emailReferral" class="emailReferral" method="post" data-ajax="false" style="display:none; padding-left:10px; padding-right:10px; padding-bottom:20px;">
+        <div id="emailReferralSending" style="display:none;">
+            <h2>Sending...</h2>
+            <small>This may take a few moments depending on your data connection.</small>
+        </div>
+        <div id="emailReferralOpen">
         <div data-role="fieldcontain" class="ui-hide-label">
           <label for="Email">Referral Email</label>
           <input type="text" name="Email" id="Email" value="" placeholder="Referral Email" class="required email" data-mini="true" />
@@ -277,11 +249,17 @@ $(document).on('pageinit', '#home', function(){
         <a href="#help" data-role="button" data-rel="popup" data-position-to="window" data-transition="pop" data-mini="true" data-icon="alert">Help</a>
         <a id="emailRefReset" href="" data-role="button" data-inline="true" data-mini="true" data-icon="delete">Clear</a>
         </div>
+        </div>
         </form><!-- /email referral -->
         
         <!-- Send this app -->
         <a id="sendAppBtn" href="" target="_blank" data-role="button" data-icon="email">Send this app</a>
         <form id="sendApp" class="sendApp" method="post" data-ajax="false" style="display:none; padding-left:10px; padding-right:10px; padding-bottom:20px;">
+        <div id="sendAppSending" style="display:none;">
+            <h2>Sending...</h2>
+            <small>This may take a few moments depending on your data connection.</small>
+        </div>
+        <div id="sendAppOpen">
         <div data-role="fieldcontain" class="ui-hide-label">
           <label for="Email">Email</label>
           <input type="text" name="Email" id="Email" value="" placeholder="Email" class="required email" data-mini="true" />
@@ -296,24 +274,22 @@ $(document).on('pageinit', '#home', function(){
         <a href="#help" data-role="button" data-rel="popup" data-position-to="window" data-transition="pop" data-mini="true" data-icon="alert">Help</a>
         <a id="sendAppReset" href="" data-role="button" data-inline="true" data-mini="true" data-icon="delete">Clear</a>
         </div>
+        </div>
         </form><!-- /send this app -->
+        
+<!-- TESTING Text referral --> 
+
+		<a href="sms://?body=Get%20the%20app%20at%20http%3A%2F%2Fapp.app-platform.net" data-role="button" data-icon="phone">Text this app</a>
+    
+<!-- /TESTING -->        
 
 		<br />
         <p><strong>Contact</strong></p>
         <a href="tel:8885590902" data-role="button" data-icon="phone">(888) 559-0902</a>
         <a href="mailto:info@app-platform.net" target="_blank" data-role="button" data-icon="email">info@app-platform.net</a>
-        <a href="http://app-platform.net" rel="external" data-role="button" data-icon="home" target="_blank">www.app-platform.net</a>
-        <!-- Phonegap external link
         <a data-role="button" data-icon="home" target="_blank" onClick="window.open('http://www.app-platform.net', '_system', 'location=yes');">www.app-platform.net</a>
-        -->
-        <a href="http://www.facebook.com/AppPlatformnet" rel="external" data-role="button" data-icon="facebook" target="_blank">facebook</a>
-        <!-- Phonegap external link
         <a data-role="button" data-icon="facebook" target="_blank" onClick="window.open('http://www.facebook.com/AppPlatformnet', '_system', 'location=yes');">facebook</a>
-        -->
-        <a href="http://www.linkedin.com/company/2779772" rel="external" data-role="button" data-icon="linkedin" target="_blank">linkedin</a>
-        <!-- Phonegap external link
         <a data-role="button" data-icon="linkedin" target="_blank" onClick="window.open('http://www.linkedin.com/company/2779772t', '_system', 'location=yes');">linkedIn</a>
-        -->
     </div><!-- /block a -->
     
     <div class="grid_7 ui-block960-b">
@@ -438,6 +414,7 @@ $(document).on('pageinit', '#home', function(){
     <div data-role="collapsible" data-collapsed="true" id="refresh">
     <h2>Google Calander</h2>
     <iframe name="calendar" src="https://www.google.com/calendar/embed?showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=500&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=hiqkeensk1uti4348ijbd7h8ro%40group.calendar.google.com&amp;color=%23B1440E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23711616&amp;src=p%23weather%40group.v.calendar.google.com&amp;color=%2329527A&amp;ctz=America%2FChicago" style=" border-width:0 " width="800" height="500" frameborder="0" scrolling="no"></iframe>
+    
     <a data-role="button" data-icon="home" target="_blank" onClick="window.open('calander.htm', '_system', 'location=yes');">Open Calander</a>
     </div>
     <div style="clear:both;"></div>
@@ -589,7 +566,11 @@ $(document).on('pageinit', '#home', function(){
         <!-- Get your own app -->
         <a id="getYourOwnAppBtn" href="" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a>
         <form id="getYourOwnApp" class="getYourOwnApp" method="post" data-ajax="false" style="display:none;">
-        <div style="margin-left:auto; margin-right:auto; max-width:250px; margin-top:-10px;">
+        <div id="getYourOwnAppSending" style="display:none;">
+            <h2>Sending...</h2>
+            <small>This may take a few moments depending on your data connection.</small>
+        </div>
+        <div id="getYourOwnAppOpen" style="margin-left:auto; margin-right:auto; max-width:250px; margin-top:-10px;">
             <div data-role="fieldcontain" class="ui-hide-label">
               <label for="Email">Email</label>
               <input type="text" name="Email" id="Email" value="" placeholder="Email" class="required email" data-mini="true" />
@@ -641,10 +622,7 @@ $(document).on('pageinit', '#home', function(){
     		<p><strong>Get Your Own App</strong><br>
    		    Tap the &quot;Get your own app!&quot; button and enter the email address of the person interested in getting more information about apps from App-Platform.net in the &quot;Email&quot; field. Once you are done tap the &quot;Submit&quot; button and a representative of App-Platform.net will be in touch.</p>
         	<p><strong>Learn more</strong><br>
-            Go to <a href="http://app-platform.net" rel="external" target="_blank">App-Platform.net</a> to learn more about this app and others.</p>
-            <!-- Phonegap external link
             Go to <a target="_blank" onClick="window.open('http://app-platform.net', '_system', 'location=yes');">App-Platform.net</a> to learn more about this app and others.></p>
-            -->
         </div>
         <div data-role="footer" class="center">
             <a href="#" data-role="button" data-inline="true" data-theme="a" data-rel="back" data-icon="delete" style="margin-top:10px; margin-bottom:10px;">Close Window</a>
@@ -654,32 +632,14 @@ $(document).on('pageinit', '#home', function(){
 <div class="container_12">
 	<div class="grid_6 ui-block960-a">
         <p><strong>Ultimate Business Card examples</strong></p>
-        <a href="http://joeytork.app-platform.net/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Joey Torkildson</a>
-        <!-- Phonegap external link
         <a data-role="button" data-icon="info" target="_blank" onClick="window.open('http://joeytork.app-platform.net/webapp.htm', '_system', 'location=yes');">Joey Torkildson</a>
-        -->
-        <a href="http://lakecountry.app-platform.net/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Lake Country Ins.</a>
-        <!-- Phonegap external link
         <a data-role="button" data-icon="info" target="_blank" onClick="window.plugins.childBrowser.openExternal('http://lakecountry.app-platform.net/webapp.htm');">Lake Country Ins.</a>
-        -->
-        <a href="http://pyxissolutions.com/app/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Pyxis Solutions</a>
-        <!-- Phonegap external link
         <a data-role="button" data-icon="info" target="_blank" onClick="window.open('http://pyxissolutions.com/app/webapp.htm', '_system', 'location=yes');">Pyxis Solutions</a>
-        -->
         <br />
         <p><strong>Custom App examples</strong></p>
-        <a href="http://app-platform.net/sicora/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Sicora</a>
-        <!-- Phonegap external link
         <a data-role="button" data-icon="info" target="_blank" onClick="window.open('http://app-platform.net/sicora/webapp.htm', '_system', 'location=yes');">Sicora</a>
-        -->
-        <a href="http://twincitiesnorth.com/app/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Twin Cities North</a>
-        <!-- Phonegap external link
         <a data-role="button" data-icon="info" target="_blank" onClick="window.open('http://twincitiesnorth.com/app/webapp.htm', '_system', 'location=yes');">Twin Cities North</a>
-        -->
-        <a href="http://networkunlimited.app-platform.net/webapp.htm" rel="external" data-role="button" data-icon="info" target="_blank">Network Unlimited</a>
-        <!-- Phonegap external link
         <a data-role="button" data-icon="info" target="_blank" onClick="window.open('http://networkunlimited.app-platform.net/webapp.htm', '_system', 'location=yes');">Network Unlimited</a>
-        -->
     </div><!-- /block a -->
     
 	<div class="grid_6 ui-block960-b">
@@ -695,7 +655,11 @@ $(document).on('pageinit', '#home', function(){
         <!-- Get your own app -->
         <a id="getYourOwnAppBtn2" href="" target="_blank" data-role="button" data-theme="a" data-inline="true" data-icon="email">Get your own app!</a>
         <form id="getYourOwnApp2" class="getYourOwnApp2" method="post" data-ajax="false" style="display:none;">
-        <div style="margin-left:auto; margin-right:auto; max-width:250px; margin-top:-10px;">
+        <div id="getYourOwnAppSending2" style="display:none;">
+            <h2>Sending...</h2>
+            <small>This may take a few moments depending on your data connection.</small>
+        </div>
+        <div id="getYourOwnAppOpen2" style="margin-left:auto; margin-right:auto; max-width:250px; margin-top:-10px;">
             <div data-role="fieldcontain" class="ui-hide-label">
               <label for="Email">Email</label>
               <input type="text" name="Email" id="Email" value="" placeholder="Email" class="required email" data-mini="true" />
@@ -745,12 +709,11 @@ $(function() {
         
                 $.ajax({
                 type: "POST",
-				url: "php/infoRequest.php",
-                //url: "http://app.app-platform.net/php/infoRequest.php",
+                url: "http://app-platform.net/test/php/infoRequest.php",
                 data: data,
                 success: function(){
                     $(form).fadeOut();
-                          $('.thanks1').fadeIn(2500);
+                    $('.thanks1').fadeIn(2500);
                 }
                 });
             return false;
@@ -770,14 +733,16 @@ $(function() {
     $( "#emailReferral" ).validate({
         submitHandler: function(form) {
            var data= $(form).serialize()
-        
+				$("#emailReferralOpen").fadeOut();
+				$("#emailReferralSending").fadeIn('slow');
                 $.ajax({
                 type: "POST",
-                url: "php/emailReferral.php",
-                //url: "http://app.app-platform.net/php/emailReferral.php",
+                url: "http://app-platform.net/test/php/emailReferral.php",
                 data: data,
                 success: function(){
                     $(form).fadeOut();
+					$("#emailReferralOpen").fadeIn();
+					$("#emailReferralSending").fadeOut();
                 }
                 });
             return false;
@@ -792,14 +757,16 @@ $(function() {
     $( "#sendApp" ).validate({
         submitHandler: function(form) {
            var data= $(form).serialize()
-        
+				$("#sendAppOpen").fadeOut();
+				$("#sendAppSending").fadeIn('slow');
                 $.ajax({
                 type: "POST",
-                url: "php/sendApp.php",
-                //url: "http://app.app-platform.net/php/sendApp.php",
+                url: "http://app-platform.net/test/php/sendApp.php",
                 data: data,
                 success: function(){
                     $(form).fadeOut();
+					$("#sendAppOpen").fadeIn();
+					$("#sendAppSending").fadeOut();
                 }
                 });
             return false;
@@ -814,14 +781,16 @@ $(function() {
     $( "#getYourOwnApp" ).validate({
         submitHandler: function(form) {
            var data= $(form).serialize()
-        
+				$("#getYourOwnAppOpen").fadeOut();
+				$("#getYourOwnAppSending").fadeIn('slow');
                 $.ajax({
                 type: "POST",
-                url: "php/getYourOwnApp.php",
-                //url: "http://app.app-platform.net/php/getYourOwnApp.php",
+                url: "http://app-platform.net/test/php/getYourOwnApp.php",
                 data: data,
                 success: function(){
                     $(form).fadeOut();
+					$("#getYourOwnAppOpen").fadeIn();
+					$("#getYourOwnAppSending").fadeOut();
                 }
                 });
             return false;
@@ -833,14 +802,16 @@ $(function() {
     $( "#getYourOwnApp2" ).validate({
         submitHandler: function(form) {
            var data= $(form).serialize()
-        
+				$("#getYourOwnAppOpen2").fadeOut();
+				$("#getYourOwnAppSending2").fadeIn('slow');
                 $.ajax({
                 type: "POST",
-                url: "php/getYourOwnApp.php",
-                //url: "http://app.app-platform.net/php/getYourOwnApp.php",
+                url: "http://app-platform.net/test/php/getYourOwnApp.php",
                 data: data,
                 success: function(){
                     $(form).fadeOut();
+					$("#getYourOwnAppOpen2").fadeIn();
+					$("#getYourOwnAppSending2").fadeOut();
                 }
                 });
             return false;
