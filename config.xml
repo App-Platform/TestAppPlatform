@@ -26,6 +26,7 @@
 	<icon src="iconsAndroid/android-icon-48x48.png" gap:platform="android" gap:density="mdpi" />
 	<icon src="iconsAndroid/android-icon-72x72.png" gap:platform="android" gap:density="hdpi" />
 	<icon src="iconsAndroid/android-icon-96x96.png" gap:platform="android" gap:density="xhdpi" />
+	<icon src="iconsAndroid/android-icon-144x144.png" gap:platform="android" gap:density="xxhdpi" />
 
 	<gap:splash src="iconsAndroid/android-startup-image-200x320.png" gap:platform="android" gap:density="ldpi" />
 	<gap:splash src="iconsAndroid/android-startup-image-320x480.png" gap:platform="android" gap:density="mdpi" />
